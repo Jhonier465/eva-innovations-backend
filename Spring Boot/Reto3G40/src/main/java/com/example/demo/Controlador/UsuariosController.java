@@ -16,48 +16,47 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.Modelo.Client;
+import com.example.demo.Modelo.Productos;
 import com.example.demo.Modelo.Servicios;
-import com.example.demo.Servicio.ServiciosService;
+import com.example.demo.Modelo.Usuarios;
+import com.example.demo.Servicio.UsuariosService;
 
 @RestController
-@RequestMapping("/api/Servicios")
-public class ServiciosController {
+@RequestMapping("/api/Usuarios")
+public class UsuariosController {
 	
 	@Autowired
-	private ServiciosService serviciosService;
+	private UsuariosService usuariosService;
 	
 	@CrossOrigin
 	@GetMapping("/all")
-	public List<Servicios> getAll() {
-		return serviciosService.getAll();
+	public List<Usuarios> getAll() {
+		return usuariosService.getAll();
 	}
-	
 	@CrossOrigin
 	@GetMapping("/{id}")
-	public Optional<Servicios> getServicios(@PathVariable("id") int id) {
-		return serviciosService.getServicios(id);
+	public Optional<Usuarios> getUsuarios(@PathVariable("id") int id) {
+		return usuariosService.getUsuarios(id);
 	}
 	
 	@CrossOrigin
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
-	public void deleteServicios(@PathVariable("id") int id) {
-		serviciosService.deleteServicios(id);
+	public void deleteUsuarios(@PathVariable("id") int id) {
+		usuariosService.deleteUsuarios(id);
 	}
-	
 	@CrossOrigin
 	@PostMapping("/save")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Servicios save(@RequestBody Servicios servicios) {
-		return serviciosService.save(servicios);
+	public Usuarios save(@RequestBody Usuarios usuarios) {
+		return usuariosService.save(usuarios);
 	}
 	
 	@CrossOrigin
 	@PutMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
-	public Servicios modifyServicios(@RequestBody Servicios servicios, @PathVariable("id") int id) {
-		return serviciosService.modifyServicios(id, servicios);
+	public Usuarios modifyUsuarios(@RequestBody Usuarios usuarios, @PathVariable("id") int id) {
+		return usuariosService.modifyUsuarios(id, usuarios);
 	}
 	
 }
