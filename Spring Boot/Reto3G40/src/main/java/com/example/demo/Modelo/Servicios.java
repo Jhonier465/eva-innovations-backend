@@ -1,18 +1,14 @@
 package com.example.demo.Modelo;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -21,8 +17,6 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "servicios")
-
-
 public class Servicios {
 	  @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,7 +33,6 @@ public class Servicios {
 			
 		}
 		
-		
 		public Servicios(Integer idServicios, String descripcionServicios, String listaSevicios, String nombreServicios,
 				String fotoServicios) {
 		
@@ -49,8 +42,6 @@ public class Servicios {
 			this.nombreServicios = nombreServicios;
 			this.fotoServicios = fotoServicios;
 		}
-
-
 		public Integer getIdServicios() {
 			return idServicios;
 		}
@@ -81,18 +72,11 @@ public class Servicios {
 		public void setFotoServicios(String fotoServicios) {
 			this.fotoServicios = fotoServicios;
 		}
-
-
 		public Set<Productos> getProductos() {
 			return productos;
 		}
-
-
 		public void setProductos(Set<Productos> productos) {
 			this.productos = productos;
-		}
-
-
-		    
+		}		    
 	    
 }

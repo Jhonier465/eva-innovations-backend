@@ -16,48 +16,45 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.Modelo.Client;
-import com.example.demo.Modelo.Servicios;
-import com.example.demo.Servicio.ServiciosService;
+import com.example.demo.Modelo.Planes;
+import com.example.demo.Modelo.Productos;
+import com.example.demo.Servicio.PlanesService;
+import com.example.demo.Servicio.ProductosService;
 
 @RestController
-@RequestMapping("/api/Servicios")
-public class ServiciosController {
-	
+@RequestMapping("/api/Planes")
+public class PlanesController {
 	@Autowired
-	private ServiciosService serviciosService;
+	private PlanesService planesService;
 	
 	@CrossOrigin
 	@GetMapping("/all")
-	public List<Servicios> getAll() {
-		return serviciosService.getAll();
+	public List<Planes> getAll() {
+		return planesService.getAll();
 	}
 	
 	@CrossOrigin
 	@GetMapping("/{id}")
-	public Optional<Servicios> getServicios(@PathVariable("id") int id) {
-		return serviciosService.getServicios(id);
+	public Optional<Planes> getPlanes(@PathVariable("id") int id) {
+		return planesService.getPlanes(id);
 	}
-	
 	@CrossOrigin
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
-	public void deleteServicios(@PathVariable("id") int id) {
-		serviciosService.deleteServicios(id);
+	public void deletePlanes(@PathVariable("id") int id) {
+		planesService.deletePlanes(id);
 	}
-	
 	@CrossOrigin
 	@PostMapping("/save")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Servicios save(@RequestBody Servicios servicios) {
-		return serviciosService.save(servicios);
+	public Planes save(@RequestBody Planes planes) {
+		return planesService.save(planes);
 	}
 	
 	@CrossOrigin
 	@PutMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
-	public Servicios modifyServicios(@RequestBody Servicios servicios, @PathVariable("id") int id) {
-		return serviciosService.modifyServicios(id, servicios);
+	public Planes modifyPlanes(@RequestBody Planes planes, @PathVariable("id") int id) {
+		return planesService.modifyPlanes(id, planes);
 	}
-	
 }
