@@ -5,11 +5,8 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.example.demo.Modelo.Client;
 import com.example.demo.Modelo.Productos;
 import com.example.demo.Modelo.Servicios;
-import com.example.demo.Repositorio.ClientRepository;
 import com.example.demo.Repositorio.ServiciosRepository;
 
 @Service
