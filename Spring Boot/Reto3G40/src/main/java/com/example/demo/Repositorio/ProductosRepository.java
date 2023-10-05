@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.Interface.ProductosInterface;
 import com.example.demo.Interface.ServiciosInterface;
-import com.example.demo.Modelo.Client;
+
 import com.example.demo.Modelo.Productos;
 import com.example.demo.Modelo.Servicios;
 
