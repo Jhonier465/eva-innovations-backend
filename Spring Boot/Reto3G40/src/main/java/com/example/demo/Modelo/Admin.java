@@ -3,11 +3,7 @@ package com.example.demo.Modelo;
 import javax.persistence.*;
 import java.io.Serializable;
 
-
 @Entity
-
-
-
 @Table(name = "admin")
 public class Admin implements Serializable {
 
