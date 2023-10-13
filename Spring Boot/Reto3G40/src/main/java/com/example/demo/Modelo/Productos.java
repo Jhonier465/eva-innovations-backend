@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Table(name = "productos")
 public class Productos {
 	
-	 @Id
+		@Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Integer idProducto;
 	    private String nombreProducto;
